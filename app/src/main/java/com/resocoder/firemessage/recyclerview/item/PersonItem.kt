@@ -1,8 +1,8 @@
 package com.resocoder.firemessage.recyclerview.item
 
 import android.content.Context
+import com.bumptech.glide.Glide
 import com.resocoder.firemessage.R
-import com.resocoder.firemessage.glide.GlideApp
 import com.resocoder.firemessage.model.User
 import com.resocoder.firemessage.util.StorageUtil
 import com.xwray.groupie.kotlinandroidextensions.Item
@@ -19,7 +19,7 @@ class PersonItem(val person: User,
         viewHolder.textView_name.text = person.name
         viewHolder.textView_bio.text = person.bio
         if (person.profilePicturePath != null)
-            GlideApp.with(context)
+            Glide.with(context)
                     .load(StorageUtil.pathToReference(person.profilePicturePath))
                     .placeholder(R.drawable.ic_account_circle_black_24dp)
                     .into(viewHolder.imageView_profile_picture)

@@ -1,8 +1,8 @@
 package com.resocoder.firemessage.recyclerview.item
 
 import android.content.Context
+import com.bumptech.glide.Glide
 import com.resocoder.firemessage.R
-import com.resocoder.firemessage.glide.GlideApp
 import com.resocoder.firemessage.model.ImageMessage
 import com.resocoder.firemessage.util.StorageUtil
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
@@ -15,7 +15,7 @@ class ImageMessageItem(val message: ImageMessage,
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         super.bind(viewHolder, position)
-        GlideApp.with(context)
+        Glide.with(context)
                 .load(StorageUtil.pathToReference(message.imagePath))
                 .placeholder(R.drawable.ic_image_black_24dp)
                 .into(viewHolder.imageView_message_image)
