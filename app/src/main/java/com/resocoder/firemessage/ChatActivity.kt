@@ -3,10 +3,10 @@ package com.resocoder.firemessage
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ListenerRegistration
 import com.resocoder.firemessage.model.ImageMessage
@@ -20,8 +20,6 @@ import com.xwray.groupie.Section
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat.*
-import org.jetbrains.anko.startActivityForResult
-import org.jetbrains.anko.toast
 import java.io.ByteArrayOutputStream
 import java.util.*
 
@@ -116,6 +114,6 @@ class ChatActivity : AppCompatActivity() {
         else
             updateItems()
 
-        recycler_view_messages.scrollToPosition(recycler_view_messages.adapter.itemCount - 1)
+        recycler_view_messages.scrollToPosition(recycler_view_messages.adapter!!.itemCount - 1)
     }
 }
