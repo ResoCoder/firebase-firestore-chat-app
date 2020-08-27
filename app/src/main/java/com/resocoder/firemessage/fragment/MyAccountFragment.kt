@@ -98,6 +98,8 @@ class MyAccountFragment : Fragment() {
                 if (!pictureJustChanged && user.profilePicturePath != null)
                     GlideApp.with(this)
                             .load(StorageUtil.pathToReference(user.profilePicturePath))
+                            //Latest patch of Glide Requires you add this line of code in a Fragment Activity for it to Work
+                            .apply(RequestOptions()
                             .placeholder(R.drawable.ic_account_circle_black_24dp)
                             .into(imageView_profile_picture)
             }
